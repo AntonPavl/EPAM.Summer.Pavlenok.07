@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrical", "Geometrical\Geometrical.csproj", "{F27067CC-3D51-408E-A6D4-FF9F2274BE1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Libary\Library.csproj", "{F744BEFA-BF88-4B74-8EA1-E4B2E29D01BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F27067CC-3D51-408E-A6D4-FF9F2274BE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27067CC-3D51-408E-A6D4-FF9F2274BE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27067CC-3D51-408E-A6D4-FF9F2274BE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27067CC-3D51-408E-A6D4-FF9F2274BE1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F744BEFA-BF88-4B74-8EA1-E4B2E29D01BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F744BEFA-BF88-4B74-8EA1-E4B2E29D01BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F744BEFA-BF88-4B74-8EA1-E4B2E29D01BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F744BEFA-BF88-4B74-8EA1-E4B2E29D01BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
