@@ -10,40 +10,18 @@ namespace Geometrical
 {
     public class Circle : Ellipse
     {
-        private Point center;
-
-        public override Point Center
+        public Circle(Point center,int radius)
         {
-            get
-            {
-                return center;
-            }
-
-            set
-            {
-                center = value;
-            }
+            Center = center;
+            Radius = radius;
         }
+        public override Point Center { get; }
 
-        private int radius;
+        public override int Radius{ get; }
 
-        public override int Radius
-        {
-            get
-            {
-                return radius;
-            }
+        public override double Space() => Math.Pow(Radius, 2) * Math.PI;
 
-            set
-            {
-                radius = value;
-            }
-        }
-
-
-        public override double Space() => Math.Pow(radius, 2) * Math.PI;
-
-        public override double Perimetre() => 2 * radius * Math.PI;
+        public override double Perimetre() => 2 * Radius * Math.PI;
 
     }
 }

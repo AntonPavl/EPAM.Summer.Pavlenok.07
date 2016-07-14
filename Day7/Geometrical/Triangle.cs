@@ -10,40 +10,28 @@ namespace Geometrical
 {
     public class Triangle : Polygon
     {
-        private Point[] points;
-        public override Point[] Points
-        {
-            get
-            {
-                return points;
-            }
-
-            set
-            {
-                points = Points;
-            }
-        }
+        public override Point[] Points{ get;}
         public Triangle(Point[] points)
         {
-            this.points = points;
+            Points = points;
         }
         public override double Perimetre()
         {
             double result = 0;
             
-            for (int i = 1; i < points.Length; i++)
+            for (int i = 1; i < Points.Length; i++)
             {
-                result += Range(points[i], points[i-1]);
+                result += Range(Points[i], Points[i-1]);
             }
-            result += Range(points[0], points[2]);
+            result += Range(Points[0], Points[2]);
             return result;
         }
 
         public override double Space()
         {
-            return (points[0].X * (points[1].Y - points[2].Y) +
-                   points[1].X * (points[2].Y - points[0].Y) +
-                   points[2].X * (points[0].Y - points[1].Y))/2;
+            return (Points[0].X * (Points[1].Y - Points[2].Y) +
+                   Points[1].X * (Points[2].Y - Points[0].Y) +
+                   Points[2].X * (Points[0].Y - Points[1].Y))/2;
         }
     }
 }

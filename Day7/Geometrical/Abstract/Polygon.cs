@@ -10,7 +10,7 @@ namespace Geometrical.Abstract
 {
     public abstract class Polygon : Figure
     {
-        public abstract Point[] Points { get; set; }       
+        public abstract Point[] Points { get; }       
 
         protected double Range(Point p1,Point p2)
         {

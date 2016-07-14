@@ -9,7 +9,7 @@ namespace Geometrical.Abstract
 {
     public abstract class Ellipse:Figure
     {
-        public abstract int Radius { get; set; }
-        public abstract Point Center { get; set; }
+        public abstract int Radius { get; }
+        public abstract Point Center { get; }
     }
 }

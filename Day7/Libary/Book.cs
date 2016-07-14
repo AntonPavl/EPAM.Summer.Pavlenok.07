@@ -6,79 +6,46 @@ using System.Threading.Tasks;
 
 namespace Libary
 {
-    public class Book : IEquatable<Book>, IComparable<Book>
+    public class Book : IEquatable<Book>, IComparable<Book>, IComparable
     {
-        private string author;
-        private string title;
-        private int id;
-        private int pages;
+        public string Author { get;}
 
-        public string Author
-        {
-            get
-            {
-                return author;
-            }
-
-            set
-            {
-                author = value;
-            }
-        }
-
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-
-            set
-            {
-                title = value;
-            }
-        }
-
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-
-            set
-            {
-                id = value;
-            }
-        }
-
-        public int Pages
-        {
-            get
-            {
-                return pages;
-            }
-
-            set
-            {
-                pages = value;
-            }
-        }
+        public string Title { get;}
+        public int Id { get;}
+        public int NumberOfPages { get; }
 
         public int CompareTo(Book other)
         {
-            if (this.)
+            if (ReferenceEquals(other, null)) return -1;
+            if (this.Id > other.Id) return 1;
+            else if (this.Id < other.Id) return -1;
+            return 0;
         }
 
-        public bool Equals(Book other)
+        public int CompareTo(object obj)
         {
-            throw new NotImplementedException();
+            if (ReferenceEquals(obj,null)) return 1;
+            Book book = obj as Book;
+            if (book != null)
+                return this.Id.CompareTo(book.Id);
+            else
+                throw new ArgumentException($"Object is not a {nameof(Book)}");
+        }
+
+        public bool Equals(Book obj)
+        {
+            if (ReferenceEquals(obj, null) || !(obj is Book))
+                return false;
+            else
+                return ReferenceEquals(this, ((Book)obj));
         }
 
         public override int GetHashCode()
         {
-            return base.GetHashCode();
+            return Author.GetHashCode() + Title.GetHashCode()
+                + NumberOfPages.GetHashCode() + Id.GetHashCode();
         }
+
     }
 
 }

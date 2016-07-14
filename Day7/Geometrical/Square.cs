@@ -11,15 +11,14 @@ namespace Geometrical
 {
     public class Square : Polygon
     {
-        private Point[] points;
-        public override Point[] Points{ get{ return points; } set{ points = Points;}}
+        public override Point[] Points{ get; }
         public Square(Point[] points)
         {
-            this.points = points;
+            Points= points;
         }
-        public override double Perimetre() =>  Range(points[0], points[1])*4;
+        public override double Perimetre() =>  Range(Points[0], Points[1])*4;
 
-        public override double Space() => Math.Pow(Range(points[0], points[1]),2);
+        public override double Space() => Math.Pow(Range(Points[0], Points[1]),2);
 
     }
 }
