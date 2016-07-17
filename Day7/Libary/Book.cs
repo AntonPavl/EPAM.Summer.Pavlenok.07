@@ -9,35 +9,42 @@ namespace Libary
     public class Book : IEquatable<Book>, IComparable<Book>, IComparable
     {
         public string Author { get;}
-
         public string Title { get;}
         public int Id { get;}
         public int NumberOfPages { get; }
-
-        public int CompareTo(Book other)
+        public Book(string author,string title, int id, int pages)
         {
-            if (ReferenceEquals(other, null)) return -1;
-            if (this.Id > other.Id) return 1;
-            else if (this.Id < other.Id) return -1;
-            return 0;
+            Author = author;
+            Title = title;
+            NumberOfPages = pages;
+            Id = id;
         }
-
+        public int CompareTo(Book other) =>
+             Id.CompareTo(other.Id);
+        
         public int CompareTo(object obj)
         {
-            if (ReferenceEquals(obj,null)) return 1;
-            Book book = obj as Book;
-            if (book != null)
-                return this.Id.CompareTo(book.Id);
-            else
-                throw new ArgumentException($"Object is not a {nameof(Book)}");
+            if (!(obj is Book))
+                throw new InvalidOperationException($"CompareTo: Not a {nameof(Book)}");
+            return CompareTo((Book)obj);
         }
 
-        public bool Equals(Book obj)
+        public override bool Equals(object obj)
         {
             if (ReferenceEquals(obj, null) || !(obj is Book))
                 return false;
             else
                 return ReferenceEquals(this, ((Book)obj));
+        }
+        public bool Equals(Book other)
+        {
+            if (ReferenceEquals(null, other)) return false;
+            if (ReferenceEquals(this, other)) return true;
+
+            return string.Equals(Author, other.Author)
+            && string.Equals(Title, other.Title)
+            && string.Equals(Id, other.Id)
+            && NumberOfPages == other.NumberOfPages;
         }
 
         public override int GetHashCode()

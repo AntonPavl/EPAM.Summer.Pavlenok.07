@@ -12,18 +12,11 @@ namespace Library
     {
         public static Book[] SortBy(this Book[] arr,IComparer<Book> comparator)
         {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = 1; j < arr.Length; j++)
-                {
-                    if (comparator.Compare(arr[i],arr[j]) > 0)
-                    {
-                        Book temp = arr[j];
-                        arr[j] = arr[i];
-                        arr[i] = temp;
-                    }
-                }
-            }
+            if (arr == null)
+                throw new ArgumentNullException();
+            if (comparator == null)
+                comparator = Comparer<Book>.Default;//if Book is IComparable
+            Array.Sort(arr, comparator);
             return null;
         }
 
