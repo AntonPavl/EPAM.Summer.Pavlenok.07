@@ -15,7 +15,7 @@ namespace Library
             if (arr == null)
                 throw new ArgumentNullException();
             if (comparator == null)
-                comparator = Comparer<Book>.Default;//if Book is IComparable
+                comparator = Comparer<Book>.Default;
             Array.Sort(arr, comparator);
             return null;
         }
